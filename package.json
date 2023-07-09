@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/BlackScaryZ/pterodactyl-graalvm/issues"
   },
-  "homepage": "https://github.com/BlackScaryZ/pterodactyl-graalvm#readme"
+  "homepage": "https://github.com/BlackScaryZ/pterodactyl-graalvm#readme",
+  "publishConfig": {
+    "@<em>BlackScaryZ</em>:registry": "https://npm.pkg.github.com"
+  }
 }
