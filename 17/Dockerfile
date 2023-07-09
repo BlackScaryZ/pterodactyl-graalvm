@@ -9,7 +9,6 @@ ARG TARGETPLATFORM
 ARG GRAAL_VERSION=22.3.2
 ARG JAVA_VERSION=17
 
-MAINTAINER BlackScaryZ, <blackscaryz@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
