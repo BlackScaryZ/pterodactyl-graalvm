@@ -9,17 +9,17 @@ ARG TARGETPLATFORM
 ARG GRAAL_VERSION=22.3.2
 ARG JAVA_VERSION=17
 
-MAINTAINER RikoDEV, <kontakt@riko.dev>
+MAINTAINER Oshimia, <oshi@raxi.be>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Default to UTF-8 file.encoding
-ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
+ENV LANG='fr_FR.UTF-8' LANGUAGE='fr_FR:fr' LC_ALL='fr_FR.UTF-8'
 
 RUN apt-get update -y \
   && apt-get install -y curl ca-certificates openssl git tar sqlite3 fontconfig tzdata locales iproute2 \
-  && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-  && locale-gen en_US.UTF-8 \
+  && echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen \
+  && locale-gen fr_FR.UTF-8 \
   && case ${TARGETPLATFORM} in \
          "linux/amd64")  ARCH=amd64  ;; \
          "linux/arm64")  ARCH=aarch64  ;; \
@@ -30,7 +30,9 @@ RUN apt-get update -y \
   && tar -xf /tmp/graalvm.tar.gz --strip-components=1 \
   && export PATH="/opt/java/graalvm/bin:$PATH" \
   && rm -rf /var/lib/apt/lists/* \
-  && rm -rf /tmp/graalvm.tar.gz
+  && rm -rf /tmp/graalvm.tar.gz \
+  && gu install native-image \
+  && gu install js
 
 ENV JAVA_HOME=/opt/java/graalvm \
     PATH="/opt/java/graalvm/bin:$PATH"
