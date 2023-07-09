@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/BlackScaryZ/pterodactyl-graalvm#readme",
   "publishConfig": {
-    "@<em>BlackScaryZ</em>:registry": "https://npm.pkg.github.com"
+    "@<em>BlackScaryZ</em>:registry": "https://docker.pkg.github.com"
   }
 }
