@@ -1,0 +1,8 @@
+*.log
+node_modules/*
+**/docker-image.yml
+**/bin/*
+**/out/*
+**/build/*
+**/target/*
+*.tmp
